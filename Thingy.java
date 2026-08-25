@@ -19,7 +19,9 @@ public class Thingy {
         return isPrime;
     }
 
-
+    static int[] convertToPList(boolean[] isPrime) {
+        LinkedList<int> pList = new LinkedList<int>();
+    }
     public static void main(String[] args) {
         boolean[] indexBools = sieveIndex(100);
         System.out.println(java.util.Arrays.toString(indexBools));
