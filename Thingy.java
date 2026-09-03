@@ -51,6 +51,7 @@ public class Thingy {
 
         int[] finalPrimes = convertToPList(indexBools);
 
+        System.out.println(finalPrimes[finalPrimes.length - 1]);
         System.out.println("Made prime list. Press enter to print it.");
         scan.nextLine();
 
