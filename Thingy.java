@@ -21,17 +21,26 @@ public class Thingy {
     }
 
     static int[] convertToPList(boolean[] isPrime) {
-        LinkedList<Integer> pList = new LinkedList<Integer>();
         
+        int totalPrimes = 0;
         int pLen = isPrime.length;
         for (int i = 0; i < pLen; ++i) {
             if (isPrime[i]) {
-                pList.add(i);
+                ++totalPrimes;
             }
         }
 
-        int[] finList = pList.stream().mapToInt(Integer::intValue).toArray();
-        return finList;
+        int[] pList = new int[totalPrimes];
+
+        int currPrime = 0;
+        for (int i = 0; i < pLen; ++i) {
+            if (isPrime[i]) {
+                pList[currPrime] = i;
+                ++currPrime;
+            }
+        }
+
+        return pList;
     }
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
